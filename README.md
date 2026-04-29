@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Habit Tracker PWA
+
+## Overview
+
+This is a mobile-first Habit Tracker Progressive Web App built based on a strict Technical Requirements Document (TRD). The goal was to implement the specification exactly, focusing on deterministic behavior, testability, and correctness.
+
+## Features
+
+* User signup and login (local authentication)
+* Session persistence using localStorage
+* Create, edit, delete habits
+* Daily habit completion tracking
+* Automatic streak calculation
+* Protected dashboard route
+* Offline support via service worker
+* Installable as a PWA
+
+## Tech Stack
+
+* Next.js (App Router)
+* React + TypeScript
+* Tailwind CSS
+* localStorage (persistence)
+* Vitest (unit tests)
+* React Testing Library (integration tests)
+* Playwright (end-to-end tests)
 
 ## Getting Started
 
-First, run the development server:
+### Install dependencies
 
-```bash
+npm install
+
+### Run development server
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Run tests
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+npm run test
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Test Structure
 
-## Learn More
+* tests/unit → utility function tests
+* tests/integration → auth and habit form behavior
+* tests/e2e → full application flows
 
-To learn more about Next.js, take a look at the following resources:
+## Local Persistence
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The app uses localStorage with the following keys:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* habit-tracker-users
+* habit-tracker-session
+* habit-tracker-habits
 
-## Deploy on Vercel
+## PWA Support
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* manifest.json defines app metadata
+* service worker caches app shell
+* supports offline loading after first visit
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Trade-offs
+
+* No backend (as required by TRD)
+* Authentication is local and not secure for production
+* Data persistence limited to browser storage
+
+## Test Coverage
+
+Unit tests achieve at least 80% coverage for core logic in src/lib.
+
+## Deployment
+
+Deployed via vercel.
+
+## Repository
+
+https://github.com/Maryanne27/habit-tracker-pwa
+
+## Live App
+
+https://habit-tracker-pwa-jade.vercel.app
