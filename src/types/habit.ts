@@ -1,9 +1,11 @@
-export type Habit = {
+export type HabitFrequency = 'daily' | 'weekly';
+
+export interface Habit {
   id: string;
   userId: string;
   name: string;
   description: string;
-  frequency: 'daily';
+  frequency: HabitFrequency;
   createdAt: string;
   completions: string[];
-};
+}
