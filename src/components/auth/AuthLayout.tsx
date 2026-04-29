@@ -18,12 +18,16 @@ export default function AuthLayout({
       <main className="flex flex-col justify-center px-8 sm:px-12 md:px-16 lg:px-24 relative">
 
         {/* Logo */}
-        <header className="absolute top-8 left-8 flex items-center gap-2">
-          <div className="w-10 h-10 bg-violet-600 rounded-xl flex items-center justify-center text-white font-bold">
-            M
-          </div>
-          <span className="font-extrabold text-lg">Mae-Habit</span>
-        </header>
+<header className="absolute top-8 left-8 flex items-center gap-2">
+  <Link href="/" className="flex items-center gap-2 group">
+    <div className="w-10 h-10 bg-violet-600 rounded-xl flex items-center justify-center text-white font-bold group-hover:scale-105 transition">
+      M
+    </div>
+    <span className="font-extrabold text-lg group-hover:text-violet-600 transition">
+      Mae-Habit
+    </span>
+  </Link>
+</header>
 
         {/* Form Container */}
         <div className="w-full max-w-md mx-auto pt-24">
