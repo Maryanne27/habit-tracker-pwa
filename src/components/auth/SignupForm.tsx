@@ -34,38 +34,59 @@ export default function SignupForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <div className="space-y-6">
 
-      <input
-        data-testid="auth-signup-email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email address"
-        className="w-full px-4 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:ring-2 focus:ring-violet-500 outline-none"
-      />
+      {/* FORM */}
+      <form onSubmit={handleSubmit} className="space-y-5">
 
-      <input
-        data-testid="auth-signup-password"
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password (min 6 chars)"
-        className="w-full px-4 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:ring-2 focus:ring-violet-500 outline-none"
-      />
+        <input
+          data-testid="auth-signup-email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email address"
+          className="w-full px-4 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:ring-2 focus:ring-violet-500 outline-none"
+        />
 
-      {error && (
-        <div className="text-sm text-red-600 bg-red-50 border border-red-100 p-3 rounded-xl">
-          {error}
-        </div>
-      )}
+        <input
+          data-testid="auth-signup-password"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password (min 6 chars)"
+          className="w-full px-4 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:ring-2 focus:ring-violet-500 outline-none"
+        />
 
-      <button
-        data-testid="auth-signup-submit"
-        type="submit"
-        className="w-full bg-violet-600 text-white py-4 rounded-2xl font-bold hover:bg-violet-700 transition"
-      >
-        Create account
-      </button>
-    </form>
+        {error && (
+          <div className="text-sm text-red-600 bg-red-50 border border-red-100 p-3 rounded-xl">
+            {error}
+          </div>
+        )}
+
+        <button
+          data-testid="auth-signup-submit"
+          type="submit"
+          className="w-full bg-violet-600 text-white py-4 rounded-2xl font-bold hover:bg-violet-700 transition"
+        >
+          Create account
+        </button>
+      </form>
+
+      {/* CTA SECTION */}
+      <div className="text-center space-y-3 pt-4 border-t border-slate-100">
+
+        <p className="text-sm text-slate-500 font-medium">
+          Already have an account?
+        </p>
+
+        <button
+          type="button"
+          onClick={() => router.push('/login')}
+          className="w-full bg-slate-100 text-slate-800 py-3 rounded-2xl font-semibold hover:bg-slate-200 transition"
+        >
+          Login
+        </button>
+
+      </div>
+    </div>
   );
 }
