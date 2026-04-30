@@ -85,11 +85,12 @@ export default function HabitForm({
               Habit Name
             </label>
             <input
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="e.g. Drink Water"
-              className="w-full mt-2 bg-slate-50 p-4 rounded-2xl outline-none focus:ring-2 focus:ring-violet-500"
-            />
+  data-testid="habit-name-input"
+  value={name}
+  onChange={(e) => setName(e.target.value)}
+  placeholder="e.g. Drink Water"
+  className="w-full mt-2 bg-slate-50 p-4 rounded-2xl outline-none focus:ring-2 focus:ring-violet-500"
+/>
           </div>
 
           {/* Description */}
@@ -98,11 +99,12 @@ export default function HabitForm({
               Description
             </label>
             <input
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              placeholder="Optional"
-              className="w-full mt-2 bg-slate-50 p-4 rounded-2xl outline-none focus:ring-2 focus:ring-violet-500"
-            />
+  data-testid="habit-description-input"
+  value={description}
+  onChange={(e) => setDescription(e.target.value)}
+  placeholder="Optional"
+  className="w-full mt-2 bg-slate-50 p-4 rounded-2xl outline-none focus:ring-2 focus:ring-violet-500"
+/>
           </div>
 
           {/* Frequency */}
@@ -135,11 +137,12 @@ export default function HabitForm({
 
           {/* Submit */}
           <button
-            type="submit"
-            className="w-full bg-violet-600 text-white py-4 rounded-2xl font-bold text-lg hover:bg-violet-700 transition"
-          >
-            Create Habit
-          </button>
+  data-testid="habit-save-button"
+  type="submit"
+  className="w-full bg-violet-600 text-white py-4 rounded-2xl font-bold text-lg hover:bg-violet-700 transition"
+>
+  Create Habit
+</button>
         </form>
       </div>
     </div>
